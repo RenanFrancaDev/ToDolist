@@ -1,0 +1,171 @@
+/*Geral*/
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    color: #666;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./img/Task&Coffee.jpg");
+    background-position: center;
+    background-size: cover 100vh;
+    background-repeat: no-repeat;
+    background-color: beige;
+}
+
+button{
+    background-color: #fdfdfd;
+    color: #49bf9d;
+    border: 2px solid #49bf9d;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+button i{
+    color: #49bf9d;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+button:hover{
+    color: #fff;
+    background-color: #49bf9d;
+    border: 2px solid #fff;
+}
+
+button:hover i{
+    color: #fff;
+}
+
+input, select{
+    padding: 0.3rem 0.6rem;
+    text-align: center;
+    border: 2px solid #49bf9d
+}
+
+
+
+/* To Do Header*/
+
+.to-do-container{
+    max-width: 450px;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.to-do-container header{
+    text-align: center;
+    border-bottom:  1px solid #ccc;
+    margin-bottom: 0.7rem;
+}
+
+/* To Do Form*/
+
+#to-do-form, #edit-form{
+    padding: 0.8rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.7rem;
+}
+
+#to-do-form p, #edit-form p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control{
+    display: flex;
+}
+
+.form-control input{
+    margin-right: 0.3rem;
+}
+
+#cancel-edit-btn{
+    margin-top: 1rem; ;
+}
+
+/* To Do Bar */
+
+.toolbar{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+
+.toolbar h4{
+    margin-bottom: 0.5rem;
+}
+
+#search{
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form{
+    display: flex;
+}
+
+#search input{
+    box-sizing: border-box;
+    width: 100% ;
+    margin-right: 0.3rem;
+}
+
+#filter{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+#filter-search{
+    text-align: left;
+}
+
+/* To Do  list*/
+
+
+.to-do{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.7rem;
+    border-bottom: 1px 
+    solid #ddd;
+}
+
+.to-do h3{
+    flex: 1;
+    font-size: 1rem;
+}
+
+.to-do button{
+    margin-left: 0.4rem;
+}
+
+.done{
+    background-color: #1b7443;
+}
+
+.done h3{
+    color: #ddd;
+    text-decoration: line-through;
+    font-style: italic ;
+}
+
+.hide{
+    display: none;
+}
