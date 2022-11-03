@@ -6,6 +6,11 @@ const $todoList = document.getElementById("to-do-list");
 const $editForm = document.getElementById("edit-form");
 const $editInput = document.getElementById("edit-input");
 const $cancelEditBtn = document.getElementById("cancel-edit-btn");
+const $searchForm = document.getElementById("search-form");
+const $searchInput = document.getElementById("search-input")
+const $taskList = document.getElementsByClassName("to-do");
+const $task1 = document.getElementById("test");
+
 
 let oldInputValue;
 
@@ -34,7 +39,7 @@ const saveTodo = (text) =>{
     deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     todo.appendChild(deleteBtn);
 
-    console.log(todo);
+
 
     $todoList.appendChild(todo);
     $todoInput.value = ""
@@ -52,7 +57,7 @@ const uptadeTodo = (text) =>{
     
     todos.forEach((todo)=> {
 
-        let todoTitle = todo.querySelector("h3");0
+        let todoTitle = todo.querySelector("h3");
         
 
         if(todo.innerText === oldInputValue){
@@ -60,6 +65,30 @@ const uptadeTodo = (text) =>{
         }
     })
 }
+
+const searchTodo = (inputSearch) =>{
+
+    let i = 0
+    const todos = document.querySelectorAll(".to-do")
+    
+    todos.forEach((todo, i)=> {
+
+        let task = todo.querySelector("h3");
+        
+        if(!(task.innerText === inputSearch)){
+            console.log("foi")
+            toggleTask(i)
+        }
+        $searchInput.value = "";
+    })
+};
+
+const toggleTask = (i) =>{
+    console.log($taskList)
+    $taskList[i].classList.toggle("hide");
+}
+
+
 
 //Eventos
 
@@ -83,7 +112,7 @@ document.addEventListener("click", (e) => {
 
     if(parentE1 && parentE1.querySelector("h3")){
         todoTitle = parentE1.querySelector("h3").innerText;
-        console.log(todoTitle);
+        
     }
 
     if(targetE1.classList.contains("finish-to-do")){
@@ -118,6 +147,15 @@ $editForm.addEventListener("submit", (e)=>{
     }
 
     toggleForms();
+})
 
+$searchForm.addEventListener("submit", (e) => {
 
+    e.preventDefault()
+
+    let inputSearch = $searchInput.value;
+
+    if(inputSearch){
+       searchTodo(inputSearch);
+    }
 })

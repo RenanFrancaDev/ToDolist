@@ -15,7 +15,7 @@
             <h1>To Do List</h1>
         </header>
         <form id="to-do-form">
-            <p>Add your task</p>
+            <p>Add your task...</p>
             <div class="form-control">
                 <input type="text" id="to-do-input" placeholder="What're you going to do??">
                 <button type="submit">
@@ -33,9 +33,27 @@
             </div>
              <button id="cancel-edit-btn">Cancel</button>
         </form>
-        <!--Filter-->
+        <div class="toolbar">
+            <div id="search">
+                <h4>Search:</h4>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button id="erase-button">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="filter">
+                <h4>Filter:</h4>
+                <select id="filter-search">
+                    <option value="all">All</option>
+                    <option value="done">Done</option>
+                    <option value="to-do">Task to do</option>
+                </select>
+            </div>
+        </div>
         <div id="to-do-list">
-            <div class="to-do"> <!--Lista será criada pelo JS, apenas teste-->
+            <div class="to-do" id="test"> <!--Lista será criada pelo JS, apenas teste-->
                 <h3>Be happy</h3>
                 <button class="finish-to-do">
                     <i class="fa-solid fa-check"></i>
