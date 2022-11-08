@@ -6,10 +6,10 @@ const $todoList = document.getElementById("to-do-list");
 const $editForm = document.getElementById("edit-form");
 const $editInput = document.getElementById("edit-input");
 const $cancelEditBtn = document.getElementById("cancel-edit-btn");
-const $searchForm = document.getElementById("search-form");
+// const $searchForm = document.getElementById("search-form");
 const $searchInput = document.getElementById("search-input")
-const $taskList = document.getElementsByClassName("to-do");
-const $task1 = document.getElementById("test");
+const $eraseBtn = document.querySelector("#erase-button");
+const $filterBtn = document.querySelector("#filter-select");
 
 
 let oldInputValue;
@@ -66,27 +66,59 @@ const uptadeTodo = (text) =>{
     })
 }
 
-const searchTodo = (inputSearch) =>{
+// const searchTodo = (inputSearch) =>{
 
-    let i = 0
-    const todos = document.querySelectorAll(".to-do")
+
+//     let i = 0;
+//     const todos = document.querySelectorAll(".to-do");
+
     
-    todos.forEach((todo, i)=> {
+//     todos.forEach((todo, i)=> {
 
-        let task = todo.querySelector("h3");
-        
-        if(!(task.innerText === inputSearch)){
-            console.log("foi")
-            toggleTask(i)
-        }
-        $searchInput.value = "";
-    })
-};
+//         let task = todo.querySelector("h3");
 
-const toggleTask = (i) =>{
-    console.log($taskList)
-    $taskList[i].classList.toggle("hide");
-}
+
+//         if(inputSearch === ""){
+//             console.log("reset")
+//             removeTask(i)
+//          }
+
+
+//         // if(todos[i].innerText === inputSearch){
+//             if(!(task.innerText === inputSearch)){
+//                 toggleTask(i);
+//             }    
+//         // }
+
+//     })
+//     $searchInput.value = "";
+// };
+
+// const toggleTask = (i) =>{
+//     // console.log($taskList);
+//     $taskList[i].classList.add("hide");
+// }
+
+// const removeTask = (i) =>{
+//     // console.log($taskList[i])
+//     $taskList[i].classList.remove("hide");
+// }
+
+const getSearchedTodos = (search) => {
+    const todos = document.querySelectorAll(".to-do");
+  
+    todos.forEach((todo) => {
+      const todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+  
+      todo.style.display = "flex";
+  
+      console.log(todoTitle);
+  
+      if (!todoTitle.includes(search)) {
+        todo.style.display = "none";
+      }
+    });
+  };
 
 
 
@@ -149,13 +181,18 @@ $editForm.addEventListener("submit", (e)=>{
     toggleForms();
 })
 
-$searchForm.addEventListener("submit", (e) => {
+// $searchForm.addEventListener("submit", (e) => {
 
-    e.preventDefault()
+//     e.preventDefault()
 
-    let inputSearch = $searchInput.value;
+//     let inputSearch = $searchInput.value;
 
-    if(inputSearch){
-       searchTodo(inputSearch);
-    }
-})
+//     searchTodo(inputSearch);
+// })
+
+$searchInput.addEventListener("keyup", (e) => {
+    const search = e.target.value.toLowerCase();
+  
+    getSearchedTodos(search);
+  });
+  
