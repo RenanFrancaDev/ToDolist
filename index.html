@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/normalize.css" type="text/css">
-    <link rel="stylesheet" href="./assets/style.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <script src="https://kit.fontawesome.com/de5e36ff6b.js" crossorigin="anonymous"></script>
     <title>Lista de Tarefas</title>
 </head>
@@ -45,7 +45,7 @@
             </div>
             <div id="filter">
                 <h4>Filter:</h4>
-                <select id="filter-search">
+                <select id="filter-select">
                     <option value="all">All</option>
                     <option value="done">Done</option>
                     <option value="to-do">Task to do</option>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div id="to-do-list">
-            <div class="to-do" id="test"> <!--Lista será criada pelo JS, apenas teste-->
+            <!-- <div class="to-do" id="test"> 
                 <h3>Be happy</h3>
                 <button class="finish-to-do">
                     <i class="fa-solid fa-check"></i>
@@ -65,7 +65,7 @@
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <div class="to-do"> <!--Lista será criada pelo JS, apenas teste-->
+            <div class="to-do"> 
                 <h3>Learn JavaScript</h3>
                 <button class="finish-to-do">
                     <i class="fa-solid fa-check"></i>
@@ -76,9 +76,11 @@
                 <button class="remove-to-do">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
-    <script src="./assets/script.js"></script>
+    <script src="./assets/javascript/task-model.js"></script>
+    <script src="./assets/javascript/local-storage.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
